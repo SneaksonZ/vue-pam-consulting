@@ -3,19 +3,29 @@
         <div class="intro__body">
             <div class="intro__header">
                 <div class="intro__tags intro-tags">
-                    <v-intro-tag v-for="tag in tags" :key="tag.id" v-bind:tag="tag" />
+                    <v-intro-tag
+                        v-for="tag in tags"
+                        :key="tag.id"
+                        :tag="tag"
+                    />
                 </div>
-                <h1 class="intro__title title"> {{ intro.title }} </h1>
-                <h4 class="intro__subtitle"> {{ intro.subtitle }} </h4>
-                <p class="intro__text text"> {{ intro.text }} </p>
-                <button class="intro__button button button_gradient">
-                    Find Out More
-                </button>
+                <h1 class="intro__title title"> {{ block.title }} </h1>
+                <h4 class="intro__subtitle"> {{ block.subtitle }} </h4>
+                <p class="intro__text text"> {{ block.text }} </p>
+                <v-button
+                    class="intro__button"
+                    :title="block.button.title"
+                    :isGradient="block.button.isGradient"
+                />
             </div>
             <div class="intro-cities">
                 <h4 class="intro-cities__title title">Most popular cities</h4>
                 <div class="intro-cities__row">
-                    <v-intro-card v-for="card in cards" :key="card.id" v-bind:card="card" />
+                    <v-intro-card
+                        v-for="card in cards"
+                        :key="card.id"
+                        :card="card"
+                    />
                 </div>
             </div>
         </div>
@@ -23,21 +33,28 @@
 </template>
 
 <script>
+import vButton from '../v-button.vue'
+
 import vIntroTag from './v-intro-tag.vue'
 import vIntroCard from './v-intro-card.vue'
 
 export default {
     name: 'v-intro',
     components: {
+        vButton,
         vIntroTag,
         vIntroCard
     },
     data() {
         return {
-            intro: {
+            block: {
                 title: 'Relocation to Cyprus',
                 subtitle: 'Seamless - Exceptional - Experience',
-                text: 'The captivating Mediterranean island of Cyprus has become a business haven with a flourishing expat community. The strategic location that grants networking opportunities and the stability of being in the EU offers entrepreneurs the abilities they need to thrive.'
+                text: 'The captivating Mediterranean island of Cyprus has become a business haven with a flourishing expat community. The strategic location that grants networking opportunities and the stability of being in the EU offers entrepreneurs the abilities they need to thrive.',
+                button: {
+                    title : 'Find Out More',
+                    isGradient: true
+                }
             },
             tags: [
                 {

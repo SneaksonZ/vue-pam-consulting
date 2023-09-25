@@ -1,0 +1,79 @@
+.services {
+    background: linear-gradient(180deg, rgba(130, 140, 222, 1) -21.43%, rgba(109, 49, 208, 1) 201.93%);
+
+	&__body { 
+        padding: em(80) 0 em(20) 0;
+    }
+	&__title {
+        $context: 36;
+        position: relative;
+        font-size: em(36);
+        line-height: em(40, $context);
+        color: $pam_color6;
+        text-align: center;
+        margin-bottom: em(80, $context);
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: $pam_color4;
+            height: em(4, $context);
+            width: em(380, $context);
+            bottom: em(-10, $context);
+            left:50%;
+            transform:translate(-50%, -50%);
+        }
+     }
+	&__row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+     }
+	&__card {
+        margin: 0 em(10) em(60) em(10);
+     }
+}
+
+.services-card {
+    width: em(380);
+    background-color: $pam_color6;
+    border-radius: 20px;
+    // margin: 0 em(10) em(60) em(10);
+}
+
+.services-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: em(20) em(30);
+    
+	&__picture {
+        width: 100%;
+     }
+	&__img { 
+        width: 100%;
+    }
+	&__title {
+        $context: 28;
+
+        font-family: 'Avenir Next', sans-serif;
+        color: $pam_color5;
+        font-weight: 600;
+        font-size: em(28);
+        line-height: em(32, $context);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: em(20, $context);
+     }
+	&__text {
+        $context: 16;
+        font-family: 'Avenir Next', sans-serif;
+        color: $pam_color5;
+        font-size: em(16);
+        text-align: center;
+    }
+	&__button {
+        margin-top: em(20);
+     }
+}
