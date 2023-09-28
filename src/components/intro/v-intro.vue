@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import vButton from '../v-button.vue'
+import vButton from '../#helpers/v-button.vue'
 
 import vIntroTag from './v-intro-tag.vue'
 import vIntroCard from './v-intro-card.vue'

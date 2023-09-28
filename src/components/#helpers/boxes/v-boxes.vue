@@ -1,7 +1,11 @@
 <template>
     <section class="boxes">
         <div class="boxes__header">
-            <h1 class="boxes__title title title_capitalize"> {{ block.title }} </h1>
+            <h1 class="boxes__title title"
+                :class="{'title_capitalize':block.title.mobileCapitalize}"
+            >
+                {{ block.title.text }} 
+            </h1>
             <p class="boxes__subtitle text"> {{ block.subtitle }} </p>
         </div>
         <div class="boxes__row boxes-row">
@@ -26,8 +30,13 @@ export default {
     props: {
         block: {
             title: {
-                type: String,
+                text: { type: String,
                 default: ''
+                },
+                mobileCapitalize: {
+                    type: Boolean,
+                    default: false
+                }
             },
             subtitle: {
                 type: String,

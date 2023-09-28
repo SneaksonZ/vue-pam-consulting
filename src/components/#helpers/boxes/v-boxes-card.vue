@@ -2,7 +2,7 @@
     <div class="boxes__card boxes-card">
         <picture class="boxes-card__icon">
             <img
-                :src="require('../../assets/images/boxes/' + card.image)"
+                :src="require('../../../assets/images/boxes/' + card.image)"
                 :alt="card.alt"
                 class="boxes-card-icon__img"
             >

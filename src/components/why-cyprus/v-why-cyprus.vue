@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import vBoxes from './v-boxes.vue';
+import vBoxes from '../#helpers/boxes/v-boxes.vue';
 
 export default {
     name: 'v-why-cyprus',
@@ -16,8 +16,12 @@ export default {
     data() {
         return {
             block: {
-                title: 'Why Choose Cyprus?',
-                subtitle: 'When you\'re searching for the ideal home you want everything to be perfect. This is why over the years more and more people from all around the world are choosing Cyprus as their ultimate destination. This smal Mediterranean mesmerizes millions of visitors every year.'
+                title:  
+                { 
+                    text:'Why Choose Cyprus?',
+                    mobileCapitalize: false
+                },
+                subtitle: 'When you\'re searching for the ideal home you want everything to be perfect. This is why over the years more and more people from all around the world are choosing Cyprus as their ultimate destination. This smal Mediterranean mesmerizes millions of visitors every year.',
             },
             boxes: [
                 {

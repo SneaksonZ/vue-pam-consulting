@@ -42,7 +42,6 @@
 }
 
 .boxes-card {
-
     &__icon { 
         margin-bottom: em(24);
     }
@@ -66,7 +65,11 @@
      }
 }
 
-
+.boxes-card-icon {
+    &__img { 
+        width: em(150);
+    }
+}
 
 @media (max-width: 768px) {
     .boxes {

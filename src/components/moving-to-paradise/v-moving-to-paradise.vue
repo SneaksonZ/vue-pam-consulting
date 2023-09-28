@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import vButton from '../v-button.vue'
+import vButton from '../#helpers/v-button.vue'
 
 export default {
     name: 'v-moving-to-paradise',

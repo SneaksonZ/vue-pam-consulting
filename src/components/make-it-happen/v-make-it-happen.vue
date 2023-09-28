@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import vBoxes from './v-boxes.vue';
+import vBoxes from '../#helpers/boxes/v-boxes.vue';
 
 export default {
     name: 'v-make-it-happen',
@@ -16,7 +16,10 @@ export default {
     data() {
         return {
             block: {
-                title: 'How we make it happen',
+                title: {
+                    text: 'How we make it happen',
+                    mobileCapitalize: true
+                }
             },
             boxes: [
                 {
