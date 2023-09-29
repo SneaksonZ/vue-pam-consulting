@@ -22,7 +22,7 @@
 
 <script>
 import vAboutUsCard from './v-about-us-card'
-import vButton from '../v-button.vue';
+import vButton from '../#helpers/v-button.vue';
 
 export default {
     name: 'v-about-us',

@@ -1,5 +1,5 @@
 <template>
-    <form class="contact-us-form" method="post">
+    <form class="contact-us-form" :method="block.method">
         <div class="contact-us-form__body">
             <h3 class="contact-us-form__title"> {{ block.title }} </h3>
             <div class="contact-us-form__inputs">
@@ -36,7 +36,7 @@
 
 <script>
 import vFormInput from './v-form-input';
-import vButton from './v-button.vue'
+import vButton from './#helpers/v-button.vue'
 
 export default {
     name: 'v-form',

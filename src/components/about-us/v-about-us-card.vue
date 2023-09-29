@@ -18,7 +18,7 @@
 
 <script>
 
-import vButton from '../v-button.vue';
+import vButton from '../#helpers/v-button.vue';
 
 export default {
     name: 'v-about-us-card',

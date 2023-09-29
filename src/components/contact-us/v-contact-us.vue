@@ -41,6 +41,7 @@ export default {
                 ],
                 form: {
                     title: 'SEND INQUIRY',
+                    method: 'post',
                     inputs: [
                         {
                             type: 'text',
