@@ -2,9 +2,9 @@
     <section class="map">
         <div class="map__body">
             <div class="map__column">
-                <h3 class="map__title">FIND THE IDEAL LOCATION TO CALL HOME</h3>
-                <h5 class="map__subtitle" v-if="isDesktop">Click your mouse over any city to learn more about it</h5>
-                <h5 class="map__subtitle" v-else>Tap on any city to learn more about it</h5>
+                <h3 class="map__title"> {{ block.title }} </h3>
+                <h5 class="map__subtitle" v-if="isDesktop"> {{ block.subtitle.largeScreen }} </h5>
+                <h5 class="map__subtitle" v-else> {{ block.subtitle.smallScreen }} </h5>
                 <div class="map__selector">
                     <picture class="map__picture">
                         <img :src="require('../../assets/images/home/' + block.image.src)" :alt="block.image.alt" class="map__img">
