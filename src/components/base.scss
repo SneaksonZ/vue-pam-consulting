@@ -2,7 +2,10 @@ body {
     font-family: Montserrat, sans-serif;
 }
 
-.wrapper { width: 100%; }
+.wrapper { 
+    padding-top: em(120);
+    width: 100%; 
+}
 
 .title {
     font-family: 'Avenir Next', sans-serif;
@@ -24,6 +27,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
     width: em(200, $context);
     height: em(48, $context);
     color: rgba(109, 49, 208, 1);
@@ -32,6 +36,7 @@ body {
     border-radius: 30px;
     background-color: $pam_color3;
     transition: 0.2s linear;
+    padding: 0 em(5);
     &:hover {
         color: $pam_color3;
         background: linear-gradient(180deg, rgba(130, 140, 222, 1) -21.43%, rgba(109, 49, 208, 1) 201.93%);

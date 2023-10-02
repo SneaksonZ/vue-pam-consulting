@@ -3,7 +3,6 @@
         <img
                 :src="require('../../assets/images/home/' + block.image.src)"
                 :alt="block.image.alt"
-                class="boxes-card-icon__img"
             >
         <div class="about-us-founder-card__column">
             <h4 class="about-us-founder-card__title"> {{ block.title }} </h4>
@@ -18,7 +17,7 @@
 
 <script>
 
-import vButton from '../#helpers/v-button.vue';
+import vButton from '../.helpers/v-button.vue';
 
 export default {
     name: 'v-about-us-card',

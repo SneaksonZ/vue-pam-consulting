@@ -3,7 +3,7 @@
         <div class="about-us__body">
             <div class="about-us__row">
                 <div class="about-us-info about-us__info">
-                    <h2 class="about-us-info__title title"> {{ block.title }} </h2>
+                    <!-- <h2 class="about-us-info__title title"> {{ block.title }} </h2> -->
                     <p class="about-us-info__text" v-html="block.text"></p>
                     <v-button class="about-us-info__button"
                         :title="block.button.title"
@@ -22,7 +22,7 @@
 
 <script>
 import vAboutUsCard from './v-about-us-card'
-import vButton from '../#helpers/v-button.vue';
+import vButton from '../.helpers/v-button.vue';
 
 export default {
     name: 'v-about-us',

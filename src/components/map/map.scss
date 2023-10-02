@@ -1,0 +1,89 @@
+.map {
+    background-color: rgba(255, 249, 226, 1);
+    padding: em(30) 0;
+    
+    &__body {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+	&__column { 
+        display:  flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 em(10);
+    }
+	&__title {
+        font-family: 'Avenir Next', sans-serif;
+        font-weight: 600;
+        font-size: em(28);
+        line-height: em(32, 28);
+        color: $pam_color1;
+    }
+	&__subtitle {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: em(20);
+        line-height: em(32, 20);
+        color: $pam_color5;
+    }
+	&__selector { }
+	&__picture {
+
+    }
+    &__img {
+        width: 100%;
+        margin-bottom: em(40);
+    }
+	&__card {
+        width: em(480);
+    }
+}
+
+.map-card {
+    border-radius: 12px;
+    box-shadow: 12.803688049316406px 15.364425659179688px 13px 0px #00000009;
+    background-color: $pam_color6;
+
+    &__images-row { 
+        display: flex;
+        padding: em(13) em(11);
+        margin: 0 em(-5);
+    }
+    &__img {
+        width: 33.3%;
+        padding: 0 em(5);
+    }
+	&__title {
+        $context: 20;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: em(20);
+        line-height: em(32, $context);
+        color: $pam_color5;
+        text-align: center;
+        padding-bottom: em(10, $context);
+    }
+	&__text {
+        $context: 16;
+        text-align: center;
+        padding: 0 em(50, $context) em(20, $context);
+     }
+}
+
+
+@media (max-width: 1200px) {
+    .map {
+        &__title {
+            text-align: center;
+        }
+        &__subtitle {
+            font-family: 'Avenir Next', sans-serif;
+            font-weight: 400;
+            font-size: em(16);
+            line-height: em(24);
+            text-align: center;
+        }
+    }
+}

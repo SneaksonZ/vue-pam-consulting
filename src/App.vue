@@ -1,16 +1,19 @@
 <template>
   <div id="app">
-    <v-wrapper />
+    <v-header/>
+    <v-wrapper/>
   </div>
 </template>
 
 <script>
+import vHeader from './components/header/v-header.vue';
 import vWrapper from './components/v-wrapper.vue'
 
 export default {
   name: 'App',
   components: {
-    vWrapper,
+    vHeader,
+    vWrapper
   }
 }
 </script>

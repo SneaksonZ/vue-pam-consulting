@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import vButton from '../#helpers/v-button.vue'
+import vButton from '../.helpers/v-button.vue'
 
 export default {
     name: 'v-services-card',

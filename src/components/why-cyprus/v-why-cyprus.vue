@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import vBoxes from '../#helpers/boxes/v-boxes.vue';
+import vBoxes from '../.helpers/boxes/v-boxes.vue';
 
 export default {
     name: 'v-why-cyprus',

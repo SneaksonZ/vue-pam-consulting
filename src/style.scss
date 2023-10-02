@@ -5,15 +5,15 @@
 @import "helpers/functions.scss";
 
 @import "components/base.scss";
+@import "components/.helpers/boxes/boxes.scss";
 
-// @import "components/header/header.scss";
+@import "components/header/header.scss";
 @import "components/intro/intro.scss";
 @import "components/services/services.scss";
-// @import "components/moving-to-paradise/moving-to-paradise.scss";
-// @import "components/boxes/boxes.scss";
-// @import "components/map/map.scss";
-// @import "components/about-us/about-us.scss";
-// @import "components/contact-us/contact-us.scss";
-// @import "components/partners/partners.scss";
+@import "components/moving-to-paradise/moving-to-paradise.scss";
+@import "components/map/map.scss";
+@import "components/about-us/about-us.scss";
+@import "components/contact-us/contact-us.scss";
+@import "components/partners/partners.scss";
 // @import "components/questions/questions.scss";
 // @import "components/footer/footer.scss";

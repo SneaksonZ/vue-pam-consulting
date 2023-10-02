@@ -16,7 +16,7 @@
 
 
 <script>
-import vForm from '../v-form.vue';
+import vForm from '../.helpers/v-form.vue';
 
 export default {
     name: 'v-contact-us',

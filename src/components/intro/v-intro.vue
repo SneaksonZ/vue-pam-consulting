@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import vButton from '../#helpers/v-button.vue'
+import vButton from '../.helpers/v-button.vue'
 
 import vIntroTag from './v-intro-tag.vue'
 import vIntroCard from './v-intro-card.vue'
@@ -83,20 +83,27 @@ export default {
                     alt: 'Limassol',
                     subtitle: 'Limassol'
                 },
-                {
-                    id: 2,
-                    image: 'intro-cities_3.png',
-                    alt: 'Paphos',
-                    subtitle: 'Paphos'
-                },
-                {
-                    id: 3,
-                    image: 'intro-cities_4.png',
-                    alt: 'Larnaka',
-                    subtitle: 'Larnaka'
-                }
+                // {
+                //     id: 2,
+                //     image: 'intro-cities_3.png',
+                //     alt: 'Paphos',
+                //     subtitle: 'Paphos'
+                // },
+                // {
+                //     id: 3,
+                //     image: 'intro-cities_4.png',
+                //     alt: 'Larnaka',
+                //     subtitle: 'Larnaka'
+                // }
             ]
         }
     }
 }
 </script>
+
+
+<style>
+.intro {
+    background-image: url('../../assets/images/backgrounds/home-header-bg.jpg');
+}
+</style>
