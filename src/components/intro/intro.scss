@@ -5,6 +5,7 @@
     background-size: cover;
 	&__body { 
         // width: em(1282);
+        width: 89.5%;
         margin-left: 10.5%;
     }
 	&__header {
@@ -12,6 +13,7 @@
         margin-bottom: em(78);
      }
 	&__tags {
+        width: 100%;
         margin: 0 em(-10);
      }
 	&__title {
@@ -76,6 +78,8 @@
     &__row {
         display: flex;
         align-items: flex-start;
+        width: 100%;
+        overflow: auto;
         margin-bottom: em(63);
      }
 	&__card {
@@ -112,12 +116,14 @@
     .intro {
         justify-content: center;
         &__body { 
-            width: 90%;
+            width: 100%;
             margin-left: 0;
+            // padding: 0 10%;
         }
         &__header { 
             justify-content: center;
             align-items: center;
+            padding: 0 10%;
             margin: em(40) auto em(100) auto;
         }
         &__title { 
@@ -136,5 +142,8 @@
     }
     .intro-tags { 
         justify-content: center;
+    }
+    .intro-cities {
+        padding-left: 10%;
     }
 }

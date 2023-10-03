@@ -83,18 +83,18 @@ export default {
                     alt: 'Limassol',
                     subtitle: 'Limassol'
                 },
-                // {
-                //     id: 2,
-                //     image: 'intro-cities_3.png',
-                //     alt: 'Paphos',
-                //     subtitle: 'Paphos'
-                // },
-                // {
-                //     id: 3,
-                //     image: 'intro-cities_4.png',
-                //     alt: 'Larnaka',
-                //     subtitle: 'Larnaka'
-                // }
+                {
+                    id: 2,
+                    image: 'intro-cities_3.png',
+                    alt: 'Paphos',
+                    subtitle: 'Paphos'
+                },
+                {
+                    id: 3,
+                    image: 'intro-cities_4.png',
+                    alt: 'Larnaka',
+                    subtitle: 'Larnaka'
+                }
             ]
         }
     }
