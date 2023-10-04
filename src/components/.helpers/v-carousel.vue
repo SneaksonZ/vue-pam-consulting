@@ -9,12 +9,10 @@
 </template>
 
 <script>
-import vCarouselItem from './v-carousel-item.vue';
 
 export default {
     name: 'v-carousel',
     components: {
-        vCarouselItem,
     },
     data() {
         return {
@@ -35,6 +33,21 @@ export default {
                 return true;
             },
         },
+        pagination: {
+            isEnabled: {
+                type: Boolean,
+                default() {
+                    return false;
+                },
+            },
+            classes: {
+                type: String,
+                default() {
+                    return '';
+                },
+            },
+        }
+        
     },
     methods: {
         nextItem() {
