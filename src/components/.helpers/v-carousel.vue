@@ -1,18 +1,30 @@
 <template>
     <div class="carousel">
-        <div class="carousel__body" :style="{ left: (-1 * itemWidth * currentItemIndex) + 'px'}" >
-            <slot></slot>
+        <div class="carousel__wrapper">
+            <div class="carousel__body" :style="{ left: (-1 * itemWidth * currentItemIndex) + 'px'}" >
+                <slot></slot>
+            </div>
+        <!-- <button @click="prevItem" :disabled="currentItemIndex === 0 && !isCyclic">Previous</button> -->
+        <!-- <button @click="nextItem" :disabled="currentItemIndex === slides.length - 1 && !isCyclic">Next</button> -->
         </div>
-        <button @click="prevItem" :disabled="currentItemIndex === 0 && !isCyclic">Previous</button>
-        <button @click="nextItem" :disabled="currentItemIndex === slides.length - 1 && !isCyclic">Next</button>
+        <v-carousel-pagination 
+            v-if="pagination.isEnabled"
+            :class="pagination.classes"
+            :totalItems="slides.length"
+            :itemsPerPage="1"
+            :currentPage="currentItemIndex + 1"
+            @goToPage="currentItemIndex = $event - 1"
+        />
     </div>
 </template>
 
 <script>
+import vCarouselPagination from './v-carousel-pagination.vue';
 
 export default {
     name: 'v-carousel',
     components: {
+        vCarouselPagination
     },
     data() {
         return {
@@ -33,19 +45,20 @@ export default {
                 return true;
             },
         },
+        interval: {
+            type: Number,
+            default() {
+                return 0;
+            }
+        },
         pagination: {
-            isEnabled: {
-                type: Boolean,
-                default() {
-                    return false;
-                },
-            },
-            classes: {
-                type: String,
-                default() {
-                    return '';
-                },
-            },
+            type: Object,
+            default() {
+                return {
+                    isEnabled: true,
+                    classes: '',
+                }
+            }
         }
         
     },
@@ -63,34 +76,10 @@ export default {
     },
     mounted() {
         if (this.interval > 0) {
-            let vm = this;
-            setInterval(function() {
-                vm.nextItem();
-            }, this.interval)
+            setInterval(() => {
+                this.nextItem();
+            }, this.interval);
         }
     }
 }
 </script>
-
-<style>
-
-.carousel {
-    width: 100%;
-    height: 300;
-    position: relative;
-    overflow: hidden;
-}
-
-.carousel__body {
-    min-width: auto;
-    height: 300;
-    display: flex;
-    position: relative;
-    align-items: stretch;
-    transition: all .5s ease;
-}
-
-
-
-
-</style>
