@@ -4,7 +4,7 @@
             <img :src="require('../../assets/images/home/' + card.image)" :alt="card.alt" class="services-card-picture__img">
         </picture>
         <div class="services-card-body">
-            <h3 class="services-card-body__title"> {{ card.title }} </h3>
+            <h3 class="services-card-body__title" v-html="getTitleWithBr(card.title)"></h3>
             <p class="services-card-body__text text"> {{ card.text }} </p>
             <v-button
                     class="intro__button"
@@ -39,6 +39,12 @@ export default {
                 title: 'Find Out More',
                 isGradient: true
             }
+        }
+    },
+    methods:
+    {
+        getTitleWithBr(title) {
+            return title.replace(' ', '<br>');
         }
     }
 }

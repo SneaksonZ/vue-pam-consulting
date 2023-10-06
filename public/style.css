@@ -825,6 +825,13 @@ body {
 }
 
 .services-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 27.1428571429em;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
@@ -838,6 +845,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -867,6 +877,7 @@ body {
   color: rgb(67, 67, 100);
   font-size: 1.1428571429em;
   text-align: center;
+  margin-bottom: 1.25em;
 }
 .services-card-body__button {
   margin-top: 1.4285714286em;

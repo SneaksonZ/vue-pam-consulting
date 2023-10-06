@@ -35,6 +35,8 @@
 }
 
 .services-card {
+    display: flex;
+    flex-direction: column;
     width: em(380);
     background-color: $pam_color6;
     border-radius: 20px;
@@ -44,6 +46,7 @@
 .services-card-body {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     justify-content: space-between;
     align-items: center;
     padding: em(20) em(30);
@@ -72,6 +75,7 @@
         color: $pam_color5;
         font-size: em(16);
         text-align: center;
+        margin-bottom: em(20, $context);
     }
 	&__button {
         margin-top: em(20);
