@@ -13,7 +13,7 @@
             :totalItems="slides.length"
             :itemsPerPage="1"
             :currentPage="currentItemIndex + 1"
-            @goToPage="currentItemIndex = $event - 1"
+            @goToPage="goToPage($event - 1)"
         />
     </div>
 </template>
@@ -30,6 +30,8 @@ export default {
         return {
             currentItemIndex: 0,
             slides: this.$slots.default,
+            isAutoswipePaused: false,
+            intervalId: 0,
         }
     },
     props: {
@@ -42,20 +44,26 @@ export default {
         isCyclic: {
             type: Boolean,
             default() {
-                return true;
+                return false;
             },
         },
-        interval: {
+        swipeInterval: {
             type: Number,
             default() {
                 return 0;
+            }
+        },
+        onClickInterval: {
+            type: Number,
+            default() {
+                return this.swipeInterval;
             }
         },
         pagination: {
             type: Object,
             default() {
                 return {
-                    isEnabled: true,
+                    isEnabled: false,
                     classes: '',
                 }
             }
@@ -73,12 +81,22 @@ export default {
             if (this.currentItemIndex < 0)
                 this.isCyclic ? this.currentItemIndex = this.slides.length - 1 : this.currentItemIndex = 0;
         },
+        goToPage(pageIndex) {
+            this.currentItemIndex = pageIndex;
+            this.setSwipeInterval(this.onClickInterval, true);
+        },
+        setSwipeInterval(interval, isTemprary = false) { // isTemprary if timeout uses only once, then replaces by default timeout
+            clearInterval(this.intervalId); 
+            this.intervalId = setInterval(() => {
+                this.nextItem();
+                if (isTemprary)
+                    this.setSwipeInterval(this.swipeInterval, false)
+            }, interval);
+        }
     },
     mounted() {
-        if (this.interval > 0) {
-            setInterval(() => {
-                this.nextItem();
-            }, this.interval);
+        if (this.swipeInterval > 0) {
+            this.setSwipeInterval(this.swipeInterval);
         }
     }
 }

@@ -3,15 +3,11 @@
         <div class="partners__body">
             <h2 class="partners__title title"> {{ block.title }} </h2>
             <div class="partners__icons partners-icons">
-                <v-carousel
-                    :interval="0"
-                >
-                    <v-partners-icon
-                        v-for="partner in block.partners"
-                        :key="partner.id"
-                        :icon="partner"
-                    />
-                </v-carousel>
+                <v-partners-icon
+                    v-for="partner in block.partners"
+                    :key="partner.id"
+                    :icon="partner"
+                />
             </div>
         </div>
     </section>
@@ -20,13 +16,11 @@
 
 <script>
 import vPartnersIcon from './v-partners-icon.vue';
-import vCarousel from '../.helpers/v-carousel.vue';
 
 export default {
     name: 'v-partners',
     components: {
         vPartnersIcon,
-        vCarousel
     },
     data() {
         return {
