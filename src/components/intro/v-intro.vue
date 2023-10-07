@@ -1,31 +1,47 @@
 <template>
     <section class="intro">
-        <div class="intro__body">
-            <div class="intro__header">
-                <div class="intro__tags intro-tags">
-                    <v-intro-tag
-                        v-for="tag in tags"
-                        :key="tag.id"
-                        :tag="tag"
+        <div class="intro__slide" v-for="block in blocks" :key="block.id">
+            <img :src="require('../../assets/images/backgrounds/' + block.backgroundImage)" alt='intro-bg' class="intro__bg">
+            <!-- <div class="intro__bg" style="background-image: url('../../assets/images/backgrounds/home-header-bg.jpg')"></div> -->
+            <div class="intro__body">
+                <div class="intro__header">
+                    <div class="intro__tags intro-tags">
+                        <v-intro-tag
+                            v-for="tag in block.tags"
+                            :key="tag.id"
+                            :tag="tag"
+                            :class="{'intro-tags__item_dark':block.isColorsBlack}"
+                        />
+                    </div>
+                    <div 
+                        class="intro-titles"
+                        :class="{'intro-titles_dark':block.isColorsBlack}"
+                    >
+                        <h1 class="intro__title title"> {{ block.title }} </h1>
+                        <h4 
+                            v-if="block.subtitle != ''"
+                            class="intro__subtitle"
+                        > {{ block.subtitle }} </h4>
+                    </div>
+                    <p 
+                        class="intro__text text"
+                        :class="{'intro__text_dark':block.isColorsBlack}"
+                    > {{ block.text }} </p>
+                    <v-button
+                        class="intro__button"
+                        :title="block.button.title"
+                        :isGradient="block.button.isGradient"
                     />
                 </div>
-                <h1 class="intro__title title"> {{ block.title }} </h1>
-                <h4 class="intro__subtitle"> {{ block.subtitle }} </h4>
-                <p class="intro__text text"> {{ block.text }} </p>
-                <v-button
-                    class="intro__button"
-                    :title="block.button.title"
-                    :isGradient="block.button.isGradient"
-                />
-            </div>
-            <div class="intro-cities">
-                <h4 class="intro-cities__title title">Most popular cities</h4>
-                <div class="intro-cities__row">
-                    <v-intro-card
-                        v-for="card in cards"
-                        :key="card.id"
-                        :card="card"
-                    />
+                <div class="intro-cities">
+                    <h4 class="intro-cities__title title" v-if="block.cards.length != 0">Most popular cities</h4>
+                    <div class="intro-cities__row">
+                        <v-intro-card
+                            v-for="card in block.cards"
+                            :key="card.id"
+                            :card="card"
+                        />
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,7 +50,6 @@
 
 <script>
 import vButton from '../.helpers/v-button.vue'
-
 import vIntroTag from './v-intro-tag.vue'
 import vIntroCard from './v-intro-card.vue'
 
@@ -47,55 +62,200 @@ export default {
     },
     data() {
         return {
-            block: {
-                title: 'Relocation to Cyprus',
-                subtitle: 'Seamless - Exceptional - Experience',
-                text: 'The captivating Mediterranean island of Cyprus has become a business haven with a flourishing expat community. The strategic location that grants networking opportunities and the stability of being in the EU offers entrepreneurs the abilities they need to thrive.',
-                button: {
-                    title : 'Find Out More',
-                    isGradient: true
-                }
-            },
-            tags: [
+            blocks: [
                 {
-                    id: 0,
-                    text: 'Investments'
+                    id: "I0",
+                    backgroundImage: 'bg-intro-relocation.jpg',
+                    title: 'Relocation to Cyprus',
+                    subtitle: 'Seamless - Exceptional - Experience',
+                    text: 'The captivating Mediterranean island of Cyprus has become a business haven with a flourishing expat community. The strategic location that grants networking opportunities and the stability of being in the EU offers entrepreneurs the abilities they need to thrive.',
+                    isColorsBlack: false,
+                    button: {
+                        title : 'Find Out More',
+                        isGradient: true
+                    },
+                    tags: [
+                        {
+                            id: 'T0',
+                            text: 'Investments'
+                        },
+                        {
+                            id: 'T1',
+                            text: 'Business relocation'
+                        },
+                        {
+                            id: 'T2',
+                            text: 'Family relocation'
+                        }
+                    ],
+                    cards: [
+                        {
+                            id: 'C00',
+                            image: 'intro-cities_1.png',
+                            alt: 'Nicosia',
+                            subtitle: 'Nicosia'
+                        },
+                        {
+                            id: 'C01',
+                            image: 'intro-cities_2.png',
+                            alt: 'Limassol',
+                            subtitle: 'Limassol'
+                        },
+                        {
+                            id: 'C02',
+                            image: 'intro-cities_3.png',
+                            alt: 'Paphos',
+                            subtitle: 'Paphos'
+                        },
+                        {
+                            id: 'C03',
+                            image: 'intro-cities_4.png',
+                            alt: 'Larnaka',
+                            subtitle: 'Larnaka'
+                        }
+                    ]
                 },
                 {
-                    id: 1,
-                    text: 'Business relocation'
+                    id: "I1",
+                    backgroundImage: 'bg-intro-invest.jpg',
+                    title: 'Invest in property in Cyprus',
+                    subtitle: '',
+                    text: 'Real estate has become a flourishing type of investment on the island, with an increasing number of people seeking to invest in residential and commercial property projects in Cyprus. With a confident and stable economic outlook, it is a great time to consider investing in Cyprus property.',
+                    isColorsBlack: true,
+                    button: {
+                        title : 'Check more',
+                        isGradient: true
+                    },
+                    tags: [
+                        {
+                            id: 'T10',
+                            text: 'Investments'
+                        },
+                        {
+                            id: 'T11',
+                            text: 'Business relocation'
+                        },
+                        {
+                            id: 'T12',
+                            text: 'Family relocation'
+                        }
+                    ],
+                    cards: [
+                    ]
                 },
                 {
-                    id: 2,
-                    text: 'Family relocation'
+                    id: "I2",
+                    backgroundImage: 'bg-intro-family-relocation.jpg',
+                    title: 'Family Relocation',
+                    subtitle: '',
+                    text: 'Globally known as one of the safest places to live in the world, Cyprus is the ideal location for families. The healthy lifestyle and family-friendly communities have much to offer to every member of your family.',
+                    isColorsBlack: true,
+                    button: {
+                        title : 'Check more',
+                        isGradient: true
+                    },
+                    tags: [
+                        {
+                            id: 'T20',
+                            text: 'Investments'
+                        },
+                        {
+                            id: 'T21',
+                            text: 'Business relocation'
+                        },
+                        {
+                            id: 'T22',
+                            text: 'Family relocation'
+                        }
+                    ],
+                    cards: [
+                    ]
+                },
+                {
+                    id: "I3",
+                    backgroundImage: 'bg-intro-business-relocation.jpg',
+                    title: 'Business Relocation',
+                    subtitle: '',
+                    text: 'Cyprus has a lot to offer for business entrepreneurs who aim to reach for more and expand their business goals. The attractive tax benefits and office locations have transformed Cyprus into a country with endless business opportunities for everyone.',
+                    isColorsBlack: false,
+                    button: {
+                        title : 'Check more',
+                        isGradient: true
+                    },
+                    tags: [
+                        {
+                            id: 'T30',
+                            text: 'Investments'
+                        },
+                        {
+                            id: 'T31',
+                            text: 'Business relocation'
+                        },
+                        {
+                            id: 'T32',
+                            text: 'Family relocation'
+                        }
+                    ],
+                    cards: [
+                    ]
+                },
+                {
+                    id: "I4",
+                    backgroundImage: 'bg-intro-yachts-investments.jpg',
+                    title: 'Investing in Yachts',
+                    subtitle: '',
+                    text: 'Living on an island is an adventure that opens up a wide range of experiences and possibilities. Here, you can conquer the Mediterranean Sea by renting or owning a yacht as part of your investment plan.',
+                    isColorsBlack: true,
+                    button: {
+                        title : 'Check more',
+                        isGradient: true
+                    },
+                    tags: [
+                        {
+                            id: 'T40',
+                            text: 'Investments'
+                        },
+                        {
+                            id: 'T41',
+                            text: 'Business relocation'
+                        },
+                        {
+                            id: 'T42',
+                            text: 'Family relocation'
+                        }
+                    ],
+                    cards: [
+                    ]
+                },
+                {
+                    id: "I5",
+                    backgroundImage: 'bg-intro-moving-cyprus.jpg',
+                    title: 'Moving to Cyprus',
+                    subtitle: '',
+                    isColorsBlack: false,
+                    text: 'Thousands of individuals and families from every part of the globe have immigrated to Cyprus after discovering their perfect place to call home. The island is now one of the most dominant destinations with huge expat communities.',
+                    button: {
+                        title : 'Check more',
+                        isGradient: true
+                    },
+                    tags: [
+                        {
+                            id: 'T50',
+                            text: 'Investments'
+                        },
+                        {
+                            id: 'T51',
+                            text: 'Business relocation'
+                        },
+                        {
+                            id: 'T52',
+                            text: 'Family relocation'
+                        }
+                    ],
+                    cards: [
+                    ]
                 }
             ],
-            cards: [
-                {
-                    id: 0,
-                    image: 'intro-cities_1.png',
-                    alt: 'Nicosia',
-                    subtitle: 'Nicosia'
-                },
-                {
-                    id: 1,
-                    image: 'intro-cities_2.png',
-                    alt: 'Limassol',
-                    subtitle: 'Limassol'
-                },
-                {
-                    id: 2,
-                    image: 'intro-cities_3.png',
-                    alt: 'Paphos',
-                    subtitle: 'Paphos'
-                },
-                {
-                    id: 3,
-                    image: 'intro-cities_4.png',
-                    alt: 'Larnaka',
-                    subtitle: 'Larnaka'
-                }
-            ]
         }
     }
 }
@@ -103,7 +263,4 @@ export default {
 
 
 <style>
-.intro {
-    background-image: url('../../assets/images/backgrounds/home-header-bg.jpg');
-}
 </style>

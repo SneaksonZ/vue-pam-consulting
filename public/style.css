@@ -626,6 +626,19 @@ body {
   background-position: center 0;
   background-size: cover;
 }
+.intro__slide {
+  position: relative;
+  min-width: 100%;
+}
+.intro__bg {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center 0;
+  background-size: cover;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
 .intro__body {
   width: 89.5%;
   margin-left: 10.5%;
@@ -640,21 +653,21 @@ body {
 }
 .intro__title {
   font-size: 2.5714285714em;
-  color: rgb(255, 255, 255);
   text-transform: none;
   line-height: 1;
   margin-bottom: 0.3571428571em;
 }
 .intro__subtitle {
-  color: rgb(255, 255, 255);
   font-size: 1.4285714286em;
   font-weight: 600;
-  margin-bottom: 1.7142857143em;
 }
 .intro__text {
   color: rgb(255, 255, 255);
   width: 37.1428571429em;
   margin-bottom: 1.6428571429em;
+}
+.intro__text_dark {
+  color: rgb(67, 67, 100);
 }
 
 .intro-tags {
@@ -687,6 +700,17 @@ body {
   width: 0.1428571429em;
   height: 0.7142857143em;
   background-color: rgb(255, 255, 255);
+}
+.intro-tags__item_dark:not(:last-child):after {
+  background-color: rgb(67, 67, 100);
+}
+
+.intro-titles {
+  color: rgb(255, 255, 255);
+  margin-bottom: 1.7142857143em;
+}
+.intro-titles_dark {
+  color: rgb(67, 67, 100);
 }
 
 .intro-cities__card {
@@ -733,6 +757,7 @@ body {
 }
 
 .intro-cities-picture__img {
+  border-radius: 10px 10px 4px 4px;
   padding: 0.5357142857em;
 }
 
