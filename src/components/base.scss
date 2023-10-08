@@ -35,9 +35,9 @@ body {
     font-weight: 600;
     border-radius: 30px;
     background-color: $pam_color3;
-    transition: 0.2s linear;
     padding: 0 em(5);
     &:hover {
+        transition: 0.2s linear;
         color: $pam_color3;
         background: linear-gradient(180deg, rgba(130, 140, 222, 1) -21.43%, rgba(109, 49, 208, 1) 201.93%);
         border: 1px solid $pam_color3;

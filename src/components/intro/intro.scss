@@ -132,6 +132,21 @@
     }
 }
 
+.intro-swiper {
+    width: 100%;
+
+    &__bullet {
+        width: em(12);
+        height: em(12);
+        border: em(2) solid $pam_color6;
+
+        &_active {
+            width: em(20);
+            background-color: $pam_color6;
+        }
+    }
+}
+
 @media (max-width: 1000px) {
     .intro-cities {
         &__card {

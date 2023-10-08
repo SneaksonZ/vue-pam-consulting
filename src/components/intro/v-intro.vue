@@ -1,57 +1,80 @@
 <template>
     <section class="intro">
-        <div class="intro__slide" v-for="block in blocks" :key="block.id">
-            <img :src="require('../../assets/images/backgrounds/' + block.backgroundImage)" alt='intro-bg' class="intro__bg">
-            <!-- <div class="intro__bg" style="background-image: url('../../assets/images/backgrounds/home-header-bg.jpg')"></div> -->
-            <div class="intro__body">
-                <div class="intro__header">
-                    <div class="intro__tags intro-tags">
-                        <v-intro-tag
-                            v-for="tag in block.tags"
-                            :key="tag.id"
-                            :tag="tag"
-                            :class="{'intro-tags__item_dark':block.isColorsBlack}"
+        <swiper-container 
+            class="intro-swiper"
+
+            :autoplay-delay="5000"
+            :speed="600"
+            :slides-per-view="1"
+            :rewind="true"
+            :effect="'fade'"
+            :parallax="true"
+            :pagination-clickable="true"
+        >
+            <swiper-slide class="intro__slide" v-for="block in blocks" :key="block.id">
+                <img :src="require('../../assets/images/backgrounds/' + block.backgroundImage)" alt='intro-bg' class="intro__bg">
+                <!-- <div class="intro__bg" style="background-image: url('../../assets/images/backgrounds/home-header-bg.jpg')"></div> -->
+                <div class="intro__body">
+                    <div class="intro__header">
+                        <div 
+                            class="intro__tags intro-tags"
+                            data-swiper-parallax="-150"
+                        >
+                            <v-intro-tag
+                                v-for="tag in block.tags"
+                                :key="tag.id"
+                                :tag="tag"
+                                :class="{'intro-tags__item_dark':block.isColorsBlack}"
+                            />
+                        </div>
+                        <div 
+                            class="intro-titles"
+                            :class="{'intro-titles_dark':block.isColorsBlack}"
+                            data-swiper-parallax="-200"
+                        >
+                            <h1 class="intro__title title"> {{ block.title }} </h1>
+                            <h4 
+                                v-if="block.subtitle != ''"
+                                class="intro__subtitle"
+                            > {{ block.subtitle }} </h4>
+                        </div>
+                        <p 
+                            class="intro__text text"
+                            :class="{'intro__text_dark':block.isColorsBlack}"
+                            data-swiper-parallax="-250"
+                        > {{ block.text }} </p>
+                        <v-button
+                            data-swiper-parallax="-300"
+                            class="intro__button"
+                            :title="block.button.title"
+                            :isGradient="block.button.isGradient"
                         />
                     </div>
-                    <div 
-                        class="intro-titles"
-                        :class="{'intro-titles_dark':block.isColorsBlack}"
+                    <div class="intro-cities"
+                        data-swiper-parallax="-400"
                     >
-                        <h1 class="intro__title title"> {{ block.title }} </h1>
-                        <h4 
-                            v-if="block.subtitle != ''"
-                            class="intro__subtitle"
-                        > {{ block.subtitle }} </h4>
-                    </div>
-                    <p 
-                        class="intro__text text"
-                        :class="{'intro__text_dark':block.isColorsBlack}"
-                    > {{ block.text }} </p>
-                    <v-button
-                        class="intro__button"
-                        :title="block.button.title"
-                        :isGradient="block.button.isGradient"
-                    />
-                </div>
-                <div class="intro-cities">
-                    <h4 class="intro-cities__title title" v-if="block.cards.length != 0">Most popular cities</h4>
-                    <div class="intro-cities__row">
-                        <v-intro-card
-                            v-for="card in block.cards"
-                            :key="card.id"
-                            :card="card"
-                        />
+                        <h4 class="intro-cities__title title" v-if="block.cards.length != 0">Most popular cities</h4>
+                        <div class="intro-cities__row">
+                            <v-intro-card
+                                v-for="card in block.cards"
+                                :key="card.id"
+                                :card="card"
+                            />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </swiper-slide>
+        </swiper-container>
     </section>
 </template>
 
 <script>
-import vButton from '../.helpers/v-button.vue'
-import vIntroTag from './v-intro-tag.vue'
-import vIntroCard from './v-intro-card.vue'
+import vButton from '../.helpers/v-button.vue';
+import vIntroTag from './v-intro-tag.vue';
+import vIntroCard from './v-intro-card.vue';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 export default {
     name: 'v-intro',

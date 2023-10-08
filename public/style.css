@@ -129,11 +129,11 @@ body {
   font-weight: 600;
   border-radius: 30px;
   background-color: rgb(255, 219, 128);
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
   padding: 0 0.3571428571em;
 }
 .button:hover {
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
   color: rgb(255, 219, 128);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(-21.43%, rgb(130, 140, 222)), color-stop(201.93%, rgb(109, 49, 208)));
   background: linear-gradient(180deg, rgb(130, 140, 222) -21.43%, rgb(109, 49, 208) 201.93%);
@@ -759,6 +759,19 @@ body {
 .intro-cities-picture__img {
   border-radius: 10px 10px 4px 4px;
   padding: 0.5357142857em;
+}
+
+.intro-swiper {
+  width: 100%;
+}
+.intro-swiper__bullet {
+  width: 0.8571428571em;
+  height: 0.8571428571em;
+  border: 0.1428571429em solid rgb(255, 255, 255);
+}
+.intro-swiper__bullet_active {
+  width: 1.4285714286em;
+  background-color: rgb(255, 255, 255);
 }
 
 @media (max-width: 1000px) {
