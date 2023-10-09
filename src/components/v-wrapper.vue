@@ -9,6 +9,7 @@
         <v-make-it-happen/>
         <v-contact-us/>
         <v-partners/>
+        <v-questions/>
     </div>
 </template>
 
@@ -22,6 +23,7 @@ import vAboutUs from './about-us/v-about-us.vue';
 import vMakeItHappen from './make-it-happen/v-make-it-happen.vue';
 import vContactUs from './contact-us/v-contact-us.vue';
 import vPartners from './partners/v-partners.vue';
+import vQuestions from './questions/v-questions.vue';
 
 export default {
     name: 'v-wrapper',
@@ -34,8 +36,8 @@ export default {
         vAboutUs,
         vMakeItHappen,
         vContactUs,
-        vPartners
-
+        vPartners,
+        vQuestions
     },
 }
 </script>
