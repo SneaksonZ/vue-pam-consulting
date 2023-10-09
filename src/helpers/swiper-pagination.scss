@@ -1,0 +1,28 @@
+@import "./variables.scss";
+@import "./functions.scss";
+
+swiper-container::part(pagination) {
+    display: flex;
+    align-items: center;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: auto;
+}
+
+swiper-container::part(bullet) {
+    width: em(12);
+    height: em(12);
+    background: none;
+    border: 2px solid white;
+    opacity: 1;
+    margin: 0 em(6);
+}
+    
+swiper-container::part(bullet-active) {
+    width: em(20);
+    height: em(20);
+    background-color: white;
+    margin: 0 em(6);
+}

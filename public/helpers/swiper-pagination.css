@@ -1,0 +1,29 @@
+swiper-container::part(pagination) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: auto;
+}
+
+swiper-container::part(bullet) {
+  width: 0.857em;
+  height: 0.857em;
+  background: none;
+  border: 2px solid white;
+  opacity: 1;
+  margin: 0 0.429em;
+}
+
+swiper-container::part(bullet-active) {
+  width: 1.429em;
+  height: 1.429em;
+  background-color: white;
+  margin: 0 0.429em;
+}

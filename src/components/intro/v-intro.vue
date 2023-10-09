@@ -284,6 +284,54 @@ export default {
 }
 </script>
 
+<style lang="scss" scoped>
+@import '../../helpers/swiper-pagination.scss';
 
-<style>
+swiper-container::part(pagination) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 10.5%;
+}
+
+swiper-container::part(bullet) {
+    width: em(12);
+    height: em(12);
+    border: 2px solid white;
+    margin: em(6) 0;
+}
+    
+swiper-container::part(bullet-active) {
+    width: em(20);
+    height: em(20);
+    background-color: white;
+    margin: em(6) 0;
+}
+
+@media (max-width: 767px) {
+    swiper-container::part(pagination) {
+        flex-direction: row;
+        top: auto;
+        bottom: 40px;
+        right: 50%;
+        transform: translate(50%, 0);
+    }
+
+    swiper-container::part(bullet) {
+        width: em(12);
+        height: em(12);
+        border: 2px solid white;
+        margin: 0 em(6);
+    }
+        
+    swiper-container::part(bullet-active) {
+        width: em(20);
+        height: em(20);
+        background-color: white;
+        margin: 0 em(6);
+    }
+}
+
 </style>

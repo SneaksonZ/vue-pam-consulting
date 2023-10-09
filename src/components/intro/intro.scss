@@ -108,7 +108,7 @@
         width: 100%;
         overflow: auto;
         margin-bottom: em(63);
-     }
+    }
 	&__card {
         display: flex;
         justify-content: flex-start;
@@ -147,6 +147,19 @@
     }
 }
 
+.intro-swiper-pagination {
+    flex-direction: column;
+
+
+    &__bullet {
+        
+    }
+}
+
+.intro-swiper-pagination-bullets {
+    top: 0 !important;
+}
+
 @media (max-width: 1000px) {
     .intro-cities {
         &__card {
@@ -155,7 +168,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .intro {
         justify-content: center;
         &__body { 
@@ -188,5 +201,9 @@
     }
     .intro-cities {
         padding-left: 10%;
+
+        &__row {
+            margin-bottom: em(84);
+        }
     }
 }

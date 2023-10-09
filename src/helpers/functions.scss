@@ -1,3 +1,6 @@
+@use "sass:math";
+
 @function em($pixels, $context: $browser-context) {
-    @return #{$pixels/$context}em;
+    $value: math.div($pixels, $context) * 1em;
+    @return round($value * 1000) / 1000;
 }
