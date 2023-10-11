@@ -33,16 +33,20 @@ export default {
     data() {
         return {
             swiperParams: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
                 breakpoints: {
+                    1920: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                    },
                     1000: {
                         slidesPerView: 2,
                         slidesPerGroup: 2,
                     },
-                    1440: {
-                        slidesPerView: 3,
-                        slidesPerGroup: 3,
+                    560: {
+                        slidesPerView: 1,
+                        slidesPerGroup: 1,
                     },
                 },
                 on: {

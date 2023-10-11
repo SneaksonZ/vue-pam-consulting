@@ -10,6 +10,7 @@
         <v-contact-us/>
         <v-partners/>
         <v-questions/>
+        <v-footer/>
     </div>
 </template>
 
@@ -24,6 +25,7 @@ import vMakeItHappen from './make-it-happen/v-make-it-happen.vue';
 import vContactUs from './contact-us/v-contact-us.vue';
 import vPartners from './partners/v-partners.vue';
 import vQuestions from './questions/v-questions.vue';
+import vFooter from './footer/v-footer.vue';
 
 export default {
     name: 'v-wrapper',
@@ -37,7 +39,8 @@ export default {
         vMakeItHappen,
         vContactUs,
         vPartners,
-        vQuestions
+        vQuestions,
+        vFooter
     },
 }
 </script>
