@@ -3,8 +3,6 @@
         <div class="questions__body">
             <h2 class="questions__title title"> {{ title }} </h2>
             <swiper-container class="questions__list questions-list"
-                :slides-per-view="3"
-                :slides-per-group="3"
                 :pagination-clickable="true"
             >
                     <swiper-slide class="questions__slide"
@@ -27,7 +25,6 @@ import { register } from 'swiper/element/bundle';
 
 register();
 
-
 export default {
     name: 'v-questions',
     components: {
@@ -35,6 +32,25 @@ export default {
     },
     data() {
         return {
+            swiperParams: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                breakpoints: {
+                    1000: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 2,
+                    },
+                    1440: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                    },
+                },
+                on: {
+                    init() {
+                        // ...
+                    },
+                },
+            },
             title: 'Frequently Asked Questions',
 
             cards: [
@@ -124,6 +140,11 @@ export default {
                 },
             ]
         }
+    },
+    mounted() {
+        const swiperEl = document.querySelector('.questions-list');
+        Object.assign(swiperEl, this.swiperParams);
+        swiperEl.initialize();
     }
 }
 </script>
