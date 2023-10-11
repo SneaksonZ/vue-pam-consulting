@@ -153,8 +153,14 @@ export default {
 @import '../../helpers/swiper-pagination.scss';
 @import '../../helpers/functions.scss';
 
+swiper-container::part(container) {
+    overflow-y: visible;
+}
+
 swiper-container::part(pagination) {
+    bottom: em(-80);
     right: 50%;
+    transform: translate(50%, 0);
 }
 
 </style>

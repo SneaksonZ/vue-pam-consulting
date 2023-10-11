@@ -1543,13 +1543,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 5.714em 10% 11.429em 10%;
+  padding: 5.714em 10%;
 }
 .questions__title {
   color: rgb(255, 255, 255);
   font-size: 2.571em;
   line-height: 1.111em;
-  padding-bottom: 1.667em;
+  margin-bottom: 1.667em;
 }
 .questions__list {
   display: -webkit-box;
@@ -1570,9 +1570,11 @@ body {
 .questions-list {
   width: 100%;
   margin: 0 -0.714em;
+  padding-bottom: 5.714em;
 }
 .questions-list__item {
   width: 27.143em;
+  min-height: 35.714em;
   margin: 0 0.714em;
 }
 
