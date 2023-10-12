@@ -1646,7 +1646,7 @@ body {
 }
 
 .footer-body {
-  padding: 2.857em 0;
+  padding: 2.857em 5%;
 }
 
 .footer-info {
@@ -1655,21 +1655,31 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .footer-info__design {
-  margin-left: 12%;
+  width: 15.714em;
 }
 .footer-info__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  margin-left: 12%;
+  margin-left: 15.714em;
 }
 
 .footer-info-rights {
   padding: 0 0.625em;
+  white-space: nowrap;
 }
 .footer-info-rights__text {
   font-family: "Avenir Next", sans-serif;
@@ -1718,4 +1728,60 @@ body {
 }
 .footer-info-design__link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 1199px) {
+  .footer-info__content {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 10%;
+  }
+}
+@media (max-width: 999px) {
+  .footer-info {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-info__content {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0;
+  }
+  .footer-info-nav {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-info-nav__link:first-child:before {
+    display: none;
+  }
+  .footer-body {
+    padding: 2.857em 12%;
+  }
+  .footer-info-rights {
+    font-weight: 500;
+  }
+}
+@media (max-width: 767px) {
+  .footer-info-nav {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer-info-nav__link {
+    text-align: center;
+    width: 100%;
+  }
+  .footer-info-nav__link:before {
+    display: none;
+  }
 }
