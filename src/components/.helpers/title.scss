@@ -1,0 +1,30 @@
+.title {
+    position: relative;
+    display: inline-block;
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    &_underline {
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: $pam_color4;
+
+            padding: 2px;
+            width: 130%;
+            bottom: -10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+@media (max-width: px($widthMini)) {
+    .title {
+        &_capitalize {
+            font-size: em(40);
+            text-transform: capitalize;
+        }
+    }
+}

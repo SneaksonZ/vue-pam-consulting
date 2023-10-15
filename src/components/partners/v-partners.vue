@@ -1,13 +1,18 @@
 <template>
-    <section class="partners" style="padding-bottom: 100px;">
-        <div class="partners__body">
-            <h2 class="partners__title title"> {{ block.title }} </h2>
-            <div class="partners__icons partners-icons">
-                <v-partners-icon
-                    v-for="partner in block.partners"
-                    :key="partner.id"
-                    :icon="partner"
+    <section class="partners">
+        <div class="container">
+            <div class="partners__body">
+                <v-title
+                    class="partners__title"
+                    :text="block.title"
                 />
+                <div class="partners__icons partners-icons">
+                    <v-partners-icon
+                        v-for="partner in block.partners"
+                        :key="partner.id"
+                        :icon="partner"
+                    />
+                </div>
             </div>
         </div>
     </section>
@@ -15,12 +20,14 @@
 
 
 <script>
+import vTitle from '../.helpers/v-title.vue';
 import vPartnersIcon from './v-partners-icon.vue';
 
 export default {
     name: 'v-partners',
     components: {
-        vPartnersIcon,
+        vTitle,
+        vPartnersIcon
     },
     data() {
         return {

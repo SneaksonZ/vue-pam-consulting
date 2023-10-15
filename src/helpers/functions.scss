@@ -4,3 +4,16 @@
     $value: math.div($pixels, $context) * 1em;
     @return round($value * 1000) / 1000;
 }
+
+@function vw($px-vw, $base-vw: $widthDefault) {
+    $value: ($px-vw * 100vw) / $base-vw;
+    @return round($value * 1000) / 1000;
+}
+
+@function px($pixels) {
+    @return $pixels * 1px;
+}
+
+@function containerPadding($px-vw, $base-vw: $widthDefault) {
+    @return vw(($base-vw - $px-vw) / 2, $base-vw);
+}

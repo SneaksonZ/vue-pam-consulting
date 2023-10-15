@@ -2,33 +2,38 @@
     $context: 36;
     background-color: $pam_color6;
 
-	&__title { 
+    &__title {
         color: $pam_color5;
         font-size: em(36);
         line-height: em(40, $context);
         margin-bottom: em(60, $context);
     }
-	&__body { 
+
+    &__body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        margin: em(80) 10.5% em(20) 10%;
+        margin-top: em(80);
+        margin-bottom: em(20);
     }
-	&__icons { 
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+
+    &__icons {
         margin: 0 em(-10);
     }
 }
 
-.partners-icons { 
-    &__picture { 
+.partners-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    &__picture {
         width: em(180);
         height: em(66);
     }
-	&__img { 
+
+    &__img {
         width: 100%;
     }
 }

@@ -1,13 +1,19 @@
 <template>
     <div class="map__card map-card">
-        <div class="map-card__images-row map-card-images-row">
-            <img
-                v-for="image in card.images"
-                class="map-card__img"
-                :key="image.key"
-                :src="require('../../assets/images/home/' + image.src)"
-                :alt="image.alt"
-            >
+        <div class="map-card-header">
+            <div class="map-card-header__images-row">
+                <picture
+                    class="map-card-header-picture map-card-header__picture"
+                    v-for="image in card.images"
+                    :key="image.key"
+                >
+                    <img
+                        class="map-card-header__img"
+                        :src="require('../../assets/images/home/' + image.src)"
+                        :alt="image.alt"
+                    >
+                </picture>
+            </div>
         </div>
         <h4 class="map-card__title"> {{ card.title }} </h4>
         <p class="map-card__text text" v-html="card.text" ></p>

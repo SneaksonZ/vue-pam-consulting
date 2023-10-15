@@ -1,30 +1,37 @@
 <template>
     <section class="boxes">
-        <div class="boxes__header">
-            <h1 class="boxes__title title"
-                :class="{'title_capitalize':block.title.mobileCapitalize}"
-            >
-                {{ block.title.text }} 
-            </h1>
-            <p class="boxes__subtitle text"> {{ block.subtitle }} </p>
-        </div>
-        <div class="boxes__row boxes-row">
-            <v-boxes-pair 
-                v-for="pair in generatePairs"
-                :key="pair.id"
-                :pair="pair"
-            />
+        <div class="container boxes__container">
+            <div class="boxes__wrapper">
+                <div class="boxes__header">
+                    <v-title
+                        class="boxes__title"
+                        :needsMobileCapitalize="block.title.mobileCapitalize"
+                        :text="block.title.text"
+                    />
+                    </h1>
+                    <p class="boxes__subtitle text"> {{ block.subtitle }} </p>
+                </div>
+                <div class="boxes__row boxes-row">
+                    <v-boxes-pair 
+                        v-for="pair in generatePairs"
+                        :key="pair.id"
+                        :pair="pair"
+                    />
+                </div>
+            </div>
         </div>
     </section>
 </template>
 
 <script>
+import vTitle from '../v-title.vue';
 import vBoxesPair from './v-boxes-pair.vue'
 
 export default {
     name: 'v-boxes',
 
     components: {
+        vTitle,
         vBoxesPair
     },
     props: {
@@ -35,12 +42,12 @@ export default {
                 },
                 mobileCapitalize: {
                     type: Boolean,
-                    default: false
-                }
+                    default: false,
+                },
             },
             subtitle: {
                 type: String,
-                default: ''
+                default: '',
             },
         },
         cards: {

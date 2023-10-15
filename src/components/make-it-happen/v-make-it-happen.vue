@@ -46,7 +46,6 @@ export default {
                     title: 'We manage',
                     subtitle: 'Once you are settled, we make sure that everything is according to your expectations and your vision of the quality of our services.',
                 },
-
             ]
         }
     },

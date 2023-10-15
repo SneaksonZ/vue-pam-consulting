@@ -1,5 +1,5 @@
 <template>
-    <picture class="partners-icons__picture partners-icons-picture">
+    <picture class="partners-icons-picture partners-icons__picture">
         <img
             class="partners-icons__img"
             :src="require('../../assets/images/home/' + icon.src)"

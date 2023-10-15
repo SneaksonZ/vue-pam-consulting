@@ -15,10 +15,6 @@
         align-items: stretch;
         transition: all .5s ease;
     }
-
-    &__pagination {
-
-    }
 }
 
 .carousel-pagination {
@@ -35,11 +31,12 @@
         &_horizontal:not(:last-child) {
             margin-right: em(12);
         }
+
         &_vertical:not(:last-child) {
             margin-bottom: em(12);
         }
     }
-    
+
 
     &_vertical {
         flex-direction: column;

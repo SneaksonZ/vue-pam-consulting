@@ -1,5 +1,5 @@
 <template>
-    <div class="intro-tags__item">
+    <div class="intro-tags-item intro-tags__item">
         {{ tag.text }}
     </div>
 </template>

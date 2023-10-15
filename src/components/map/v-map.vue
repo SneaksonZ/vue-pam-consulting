@@ -1,18 +1,21 @@
 <template>
     <section class="map">
-        <div class="map__body">
-            <div class="map__column">
-                <h3 class="map__title"> {{ block.title }} </h3>
-                <h5 class="map__subtitle" v-if="isDesktop"> {{ block.subtitle.largeScreen }} </h5>
-                <h5 class="map__subtitle" v-else> {{ block.subtitle.smallScreen }} </h5>
-                <div class="map__selector">
+        <div class="container">
+            <div class="map__body">
+                <div class="map__column">
+                    <v-title
+                        class="map__title"
+                        :text="block.title"
+                    />
+                    <h5 class="map__subtitle" v-if="isMobile"> {{ block.subtitle.mobile }} </h5>
+                    <h5 class="map__subtitle" v-else> {{ block.subtitle.desktop }} </h5>
                     <picture class="map__picture">
                         <img :src="require('../../assets/images/home/' + block.image.src)" :alt="block.image.alt" class="map__img">
                     </picture>
                 </div>
-            </div>
-            <div class="map__column">
-                <v-map-card :card="cards[0]" />
+                <div class="map__column">
+                    <v-map-card :card="cards[0]" />
+                </div>
             </div>
         </div>
     </section>
@@ -20,26 +23,27 @@
 
 
 <script>
-
+import vTitle from '../.helpers/v-title.vue';
 import vMapCard from './v-map-card.vue';
 
 export default {
     name: 'v-map',
     components: {
-        vMapCard,
+        vTitle,
+        vMapCard
     },
     data() {
         return {
-            isDesktop: true,
+            isMobile: true,
             block: {
                 title: 'FIND THE IDEAL LOCATION TO CALL HOME',
                 subtitle: {
-                    largeScreen: 'Click your mouse over any city to learn more about it',
-                    smallScreen: 'Tap on any city to learn more about it'
+                    desktop: 'Click your mouse over any city to learn more about it',
+                    mobile: 'Tap on any city to learn more about it',
                 },
                 image: { 
                     src: 'map.png',
-                    alt: 'map'
+                    alt: 'map',
                 }
             },
             cards: [
@@ -58,32 +62,23 @@ export default {
 							Parade.`,
                     images: [
                         {
-                            src: 'map-card_limassol-image_1.png',
-                            alt: 'limassol1'
+                            src: 'map-card_limassol-image_1.jpg',
+                            alt: 'limassol1',
                         },
                         {
-                            src: 'map-card_limassol-image_2.png',
-                            alt: 'limassol2'
+                            src: 'map-card_limassol-image_2.jpg',
+                            alt: 'limassol2',
                         },
                         {
-                            src: 'map-card_limassol-image_3.png',
-                            alt: 'limassol3'
-                        }
+                            src: 'map-card_limassol-image_3.jpg',
+                            alt: 'limassol3',
+                        },
                     ]
                 }]
         }
     },
     created() {
-        window.addEventListener('resize', this.onResize);
-        this.onResize();
+        this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     },
-    destroyed() {
-        window.removeEventListener('resize', this.onResize)
-    },
-    methods: {
-        onResize() {
-            this.isDesktop = window.innerWidth > 1200;
-        }
-    }
 }
 </script>
