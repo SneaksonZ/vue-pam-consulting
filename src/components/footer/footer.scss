@@ -92,7 +92,7 @@ $designBlockWidth: 220;
 }
 
 
-@media (max-width: 999px) {
+@media (max-width: px($widthMedium)) {
     .footer-info {
         align-items: center;
         justify-content: center;
@@ -121,7 +121,7 @@ $designBlockWidth: 220;
     
 }
 
-@media (max-width: 767px) {
+@media (max-width: px($widthMini)) {
     .footer-info-nav {
         flex-wrap: wrap;
     }

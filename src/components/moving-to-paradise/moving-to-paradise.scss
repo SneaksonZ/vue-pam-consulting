@@ -74,7 +74,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px($widthMedium)) {
     .moving-to-paradise {
         flex-direction: column;
         padding: 0;
@@ -88,22 +88,12 @@
             // height: em(300);
         }
     }
-
-    .moving-to-paradise-picture {
-        &__image {
-            // height: 100%;
-        }
-    }
 }
 
-@media (max-width: 768px) {
+@media (max-width: px($widthMini)) {
     .moving-to-paradise {
         &__body {
             max-width: em(400);
         }
     }
-}
-
-@media (max-width: 480px) {
-    .moving-to-paradise {}
 }

@@ -178,7 +178,7 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: px($widthMedium)) {
     .intro-cities {
         &__card {
             margin-right: em(20);
@@ -186,7 +186,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: px($widthMini)) {
     .intro {
         justify-content: center;
 
@@ -205,6 +205,8 @@
 
         &__title {
             text-align: center;
+            left: 50%;
+            transform: translate(-50%, 0);            
         }
 
         &__subtitle {

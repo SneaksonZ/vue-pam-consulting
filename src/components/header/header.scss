@@ -26,9 +26,6 @@ $headerHeight: 120;
         margin: em(10);
         width: em(100);
     }
-	&__navigation {
-
-    }
 	&__button { 
         $context: 20;
         width: em(180, $context);
@@ -113,9 +110,6 @@ $headerHeight: 120;
     top: 100%;
     left: 50%;
     transform:translate(-50%, 0);
-    &__item {
-        
-    }
 }
 
 .header-navigation-item-dropdown-menu-item {
@@ -235,7 +229,7 @@ $headerHeight: 120;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: px($widthMini)) {
     .header {
         &__button {
             display: none;
