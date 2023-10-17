@@ -1,5 +1,10 @@
 # pam-consulting
 
+# Figma
+```
+https://www.figma.com/file/TCLlg3yGuA9LyBoZDAyq7z/PAMCONSULTING-info?type=design&mode=design&t=Ow97H7jnMmZOFFq9-0
+```
+
 ## Project setup
 ```
 npm install
