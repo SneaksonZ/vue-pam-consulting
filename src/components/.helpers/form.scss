@@ -1,0 +1,90 @@
+.form {
+    $checkbox-indent: 24;
+    $checkbox-size: 32;
+
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 219, 128, 0.5);
+    border-radius: 60px;
+    align-items: center;
+    width: 100%;
+    padding: em(34) em(10);
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: em(580);
+    }
+
+    &__title {
+        font-family: 'Avenir Next', sans-serif;
+        font-weight: 600;
+        font-size: em(28);
+        line-height: em(32, 28);
+        text-align: center;
+        color: $pam_color5;
+        margin-bottom: em(20, 28);
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: em(20);
+    }
+
+    &__input {
+        margin-bottom: em(15);
+    }
+
+    &__confirmation {
+        margin-bottom: em(32);
+    }
+
+    &__checkbox {
+        position: relative;
+        margin-left: em($checkbox-indent + $checkbox-size);
+    }
+
+    &__checkbox-span {
+        width: em($checkbox-size);
+        height: em($checkbox-size);
+        margin-left: em(-1 * ($checkbox-indent + $checkbox-size));
+    }
+
+    &__button {
+        font-weight: 700;
+        width: em(130, 20);
+        height: em(60, 20);
+    }
+}
+
+.form-confirmation {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+
+    &__link {
+        color: $pam_color1;
+        text-decoration: underline;
+    }
+}
+
+.form-input {
+    color: $pam_color5;
+    font-size: em(14);
+    width: em(280, 14);
+    height: em(47);
+    border-radius: 20px;
+    padding: em(10) em(20);
+    box-shadow: 0px 4px 8px 0px rgba(28, 37, 44, 0.08);
+}
+
+@media (max-width: px($widthMini)) {
+    .form-input {
+        width: 100%;
+    }
+}

@@ -1,34 +1,39 @@
 <template>
     <section class="moving-to-paradise">
-        <picture class="moving-to-paradise__picture">
-            <source :srcset="require('../../assets/images/home/' + image1.mobile)" media="(max-width: 480px)">
-            <source :srcset="require('../../assets/images/home/' + image1.mini)" media="(max-width: 950px)">
-            <img :src="require('../../assets/images/home/' + image1.default)" v-bind:alt="image1.alt" class="moving-to-paradise-picture__img">
+        <picture class="moving-to-paradise-picture moving-to-paradise__picture">
+            <source :srcset="require('../../assets/images/home/' + image1.mobile)" media="(max-width: 768px)">
+            <source :srcset="require('../../assets/images/home/' + image1.mini)" media="(max-width: 1000px)">
+            <img :src="require('../../assets/images/home/' + image1.default)" :alt="image1.alt" class="moving-to-paradise-picture__img">
         </picture>
         <div class="moving-to-paradise__body">
-            <h1 class="moving-to-paradise__title title"> {{ block.title }}</h1>
-            <p class="moving-to-paradise__text text" v-html="block.text"></p>
+            <v-title
+                class="moving-to-paradise__title"
+                :text="block.title"
+            />
+            <p class="moving-to-paradise-text moving-to-paradise__text text" v-html="block.text"></p>
             <v-button
                 class="moving-to-paradise__button"
                 :title="block.button.title"
                 :isGradient="block.button.isGradient"
             />
         </div>
-        <picture class="moving-to-paradise__picture">
-            <source :srcset="require('../../assets/images/home/' + image2.mobile)" media="(max-width: 480px)">
-            <source :srcset="require('../../assets/images/home/' + image2.mini)" media="(max-width: 950px)">
-            <img :src="require('../../assets/images/home/' + image2.default)" v-bind:alt="image2.alt" class="moving-to-paradise-picture__img">
+        <picture class="moving-to-paradise-picture moving-to-paradise__picture">
+            <source :srcset="require('../../assets/images/home/' + image2.mobile)" media="(max-width: 768px)">
+            <source :srcset="require('../../assets/images/home/' + image2.mini)" media="(max-width: 1000px)">
+            <img :src="require('../../assets/images/home/' + image2.default)" :alt="image2.alt" class="moving-to-paradise-picture__img">
        </picture>
     </section>
 </template>
 
 <script>
-import vButton from '../.helpers/v-button.vue'
+import vTitle from '../.helpers/v-title.vue';
+import vButton from '../.helpers/v-button.vue';
 
 export default {
     name: 'v-moving-to-paradise',
     components: {
-        vButton
+        vTitle,
+        vButton,
     },
     data() {
         return {
@@ -47,21 +52,21 @@ export default {
                 views, Cyprus is the place to be!`,
                 button: {
                     title : 'Find Out More',
-                    isGradient: true
-                }
+                    isGradient: true,
+                },
             },
             image1: {
                 default: 'moving-to-paradise_villa1.jpg',
                 mobile: 'moving-to-paradise_villa1_mobile.jpg',
                 mini: 'moving-to-paradise_villa1_mini.jpg',
-                alt: 'villa1'
+                alt: 'villa1',
             },
             image2: {
                 default: 'moving-to-paradise_villa2.jpg',
                 mobile: 'moving-to-paradise_villa2_mobile.jpg',
                 mini: 'moving-to-paradise_villa2_mini.jpg',
-                alt: 'villa2'
-            }
+                alt: 'villa2',
+            },
         }
     }
 }

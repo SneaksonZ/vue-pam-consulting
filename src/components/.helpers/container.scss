@@ -1,0 +1,21 @@
+.container {
+    padding: 0 containerPadding($containerDefault, $widthDefault);
+}
+
+@media (max-width: px($widthMini)) {
+    .container {
+        padding: 0 containerPadding($containerMedium, $widthMedium);
+    }
+}
+
+@media (max-width: px($widthMini)) {
+    .container {
+        padding: 0 containerPadding($containerMini, $widthMini);
+    }
+}
+
+@media (max-width: px($widthMobile)) {
+    .container {
+        padding: 0 containerPadding($containerMobile, $widthMobile);
+    }
+}

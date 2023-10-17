@@ -1,43 +1,52 @@
+$columnMargin: 5;
+$cardImagesMargin: 5;
+
 .map {
     background-color: rgba(255, 249, 226, 1);
     padding: em(30) 0;
-    
+
     &__body {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        width: 100%;
+        margin: 0 em(-$columnMargin);
     }
-	&__column { 
-        display:  flex;
+
+    &__column {
+        display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0 em(10);
+        align-items: center;
+        margin: 0 em($columnMargin);
     }
-	&__title {
+
+    &__title {
         font-family: 'Avenir Next', sans-serif;
         font-weight: 600;
         font-size: em(28);
         line-height: em(32, 28);
         color: $pam_color1;
     }
-	&__subtitle {
+
+    &__subtitle {
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
         font-size: em(20);
         line-height: em(32, 20);
         color: $pam_color5;
     }
-	&__selector { }
-	&__picture {
 
+    &__picture {
+        max-width: em(681);
     }
+
     &__img {
         width: 100%;
         margin-bottom: em(40);
     }
-	&__card {
-        width: em(480);
+
+    &__card {
+        max-width: em(480);
     }
 }
 
@@ -46,16 +55,7 @@
     box-shadow: 12.803688049316406px 15.364425659179688px 13px 0px #00000009;
     background-color: $pam_color6;
 
-    &__images-row { 
-        display: flex;
-        padding: em(13) em(11);
-        margin: 0 em(-5);
-    }
-    &__img {
-        width: 33.3%;
-        padding: 0 em(5);
-    }
-	&__title {
+    &__title {
         $context: 20;
         font-family: 'Montserrat', sans-serif;
         font-weight: 600;
@@ -65,19 +65,39 @@
         text-align: center;
         padding-bottom: em(10, $context);
     }
-	&__text {
+
+    &__text {
         $context: 16;
         text-align: center;
-        padding: 0 em(50, $context) em(20, $context);
-     }
+        padding: 0 5% em(20, $context);
+    }
 }
 
+.map-card-header {
+    padding: em(13) em(11);
 
-@media (max-width: 1200px) {
+    &__images-row {
+        display: flex;
+        margin: 0 em(-$cardImagesMargin);
+    }
+
+    &__picture {
+        width: 33.3%;
+        margin: 0 em($cardImagesMargin);
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: 10px 10px 4px 4px;
+    }
+}
+
+@media (max-width: px($widthMedium)) {
     .map {
         &__title {
             text-align: center;
         }
+
         &__subtitle {
             font-family: 'Avenir Next', sans-serif;
             font-weight: 400;

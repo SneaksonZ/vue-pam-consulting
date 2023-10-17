@@ -1,6 +1,6 @@
 <template>
-    <div class="services__card services-card">
-        <picture class="services-card__picture">
+    <div class="services-card services__card">
+        <picture class="services-card-picture services-card__picture">
             <img :src="require('../../assets/images/home/' + card.image)" :alt="card.alt" class="services-card-picture__img">
         </picture>
         <div class="services-card-body">

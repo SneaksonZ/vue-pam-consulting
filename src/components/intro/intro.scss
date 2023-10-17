@@ -3,43 +3,52 @@
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
+
     &__slide {
         position: relative;
         min-width: 100%;
+        background-color: $pam_color6;
     }
+
     &__bg {
         position: absolute;
-        background-repeat: no-repeat;
-        background-position: center 0;
-        background-size: cover;
-        z-index: -1;
-        width: 100%;
+        object-fit: contain;
+        width: 100vw;
         height: 100%;
     }
-	&__body { 
-        // width: em(1282);
+
+    &__body {
         width: 89.5%;
         margin-left: 10.5%;
     }
-	&__header {
+
+    &__header {
         margin-top: em(130);
         margin-bottom: em(78);
     }
-	&__tags {
+
+    &__tags {
         width: 100%;
         margin: 0 em(-10);
     }
-	&__title {
+
+    &__titles {
+        margin-bottom: em(24);
+    }
+
+    &__title {
         font-size: em(36);
         text-transform: none;
         line-height: 1;
         margin-bottom: em(5);
-     }
-	&__subtitle {
+    }
+
+    &__subtitle {
         font-size: em(20);
         font-weight: 600;
-     }
-	&__text {
+    }
+
+    &__text {
         color: $pam_color6;
         width: em(520);
         margin-bottom: em(23);
@@ -49,21 +58,22 @@
         }
     }
 }
+
+.intro-bg {
+    &__img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .intro-tags {
     display: flex;
     flex-wrap: wrap;
+
     &__item {
         position: relative;
-        color: $pam_color3;
-        font-weight: 500;
-        line-height: em(20);
-        text-transform: uppercase;
-        padding: 0 em(5);
-        margin: 0 em(10);
-        border-radius: em(10);
-        box-shadow: 0px 0px 80px 0px #023F76;
-        background: rgba(109, 49, 208, 0.5);
-        margin-bottom: em(24);
+        margin: 0 em(10) em(24) em(10);
 
         &:not(:last-child):after {
             content: '';
@@ -82,26 +92,42 @@
             }
         }
     }
- }
+}
+
+.intro-tags-item {
+    color: $pam_color3;
+    font-weight: 500;
+    line-height: em(20);
+    text-transform: uppercase;
+    border-radius: em(10);
+    box-shadow: 0px 0px 80px 0px #023F76;
+    background: rgba(109, 49, 208, 0.5);
+    padding: 0 em(5);
+}
+
 .intro-titles {
     color: $pam_color6;
-    margin-bottom: em(24);
+
     &_dark {
         color: $pam_color5;
     }
 }
+
 .intro-cities {
-	&__card {
+    &__card {
         display: inline;
         background-color: $pam_color6;
         border-radius: 12px;
         height: 100%;
-     }
-	&__title {
+    }
+
+    &__title {
         text-transform: none;
         font-size: em(20);
         color: $pam_color6;
-     }
+        margin-bottom: em(15);
+    }
+
     &__row {
         display: flex;
         align-items: flex-start;
@@ -109,27 +135,32 @@
         overflow: auto;
         margin-bottom: em(63);
     }
-	&__card {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
+
+    &__card {
         margin-right: em(40);
     }
-	&__picture { }
-	&__subtitle {
+}
+
+.intro-cities-card {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    &__subtitle {
         color: $pam_color2;
         font-size: em(20);
         font-weight: 600;
         line-height: em(32);
         margin: 0 em(8);
     }
-}
 
-.intro-cities-picture {
     &__img {
         border-radius: 10px 10px 4px 4px;
-        padding: em(7.5);
     }
+}
+
+.intro-cities-card-picture {
+    padding: em(7.5);
 }
 
 .intro-swiper {
@@ -147,20 +178,7 @@
     }
 }
 
-.intro-swiper-pagination {
-    flex-direction: column;
-
-
-    &__bullet {
-        
-    }
-}
-
-.intro-swiper-pagination-bullets {
-    top: 0 !important;
-}
-
-@media (max-width: 1000px) {
+@media (max-width: px($widthMedium)) {
     .intro-cities {
         &__card {
             margin-right: em(20);
@@ -168,37 +186,47 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: px($widthMini)) {
     .intro {
         justify-content: center;
-        &__body { 
+
+        &__body {
             width: 100%;
             margin-left: 0;
             // padding: 0 10%;
         }
-        &__header { 
+
+        &__header {
             justify-content: center;
             align-items: center;
             padding: 0 10%;
             margin: em(40) auto em(100) auto;
         }
-        &__title { 
+
+        &__title {
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, 0);            
+        }
+
+        &__subtitle {
             text-align: center;
         }
-        &__subtitle { 
-            text-align: center;
-        }
-        &__text { 
+
+        &__text {
             width: auto;
             text-align: center;
         }
+
         &__button {
             margin: auto;
         }
     }
-    .intro-tags { 
+
+    .intro-tags {
         justify-content: center;
     }
+
     .intro-cities {
         padding-left: 10%;
 

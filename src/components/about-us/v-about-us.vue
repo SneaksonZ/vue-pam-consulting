@@ -1,34 +1,40 @@
 <template>
     <section class="about-us">
-        <div class="about-us__body">
-            <div class="about-us__row">
-                <div class="about-us-info about-us__info">
-                    <!-- <h2 class="about-us-info__title title"> {{ block.title }} </h2> -->
-                    <p class="about-us-info__text" v-html="block.text"></p>
-                    <v-button class="about-us-info__button"
-                        :title="block.button.title"
-                        :isGradient="block.button.isGradient"
+        <div class="container">
+            <div class="about-us__wrapper">
+                <div class="about-us__row">
+                    <div class="about-us-info about-us__info">
+                        <v-title
+                            class="about-us-info-title about-us-info__title"
+                            :text="block.title"
+                            :needsUnderline="true"  
+                        />
+                        <p class="about-us-info__text text" v-html="block.text"></p>
+                        <v-button class="about-us-info__button"
+                            :title="block.button.title"
+                            :isGradient="block.button.isGradient"
+                        />
+                    </div>
+                    <v-about-us-card
+                        :block="card"
                     />
                 </div>
-                <v-about-us-card
-                    :block="card"
-                />
             </div>
         </div>
     </section>
 </template>
 
-
-
 <script>
-import vAboutUsCard from './v-about-us-card'
+import vTitle from '../.helpers/v-title.vue';
 import vButton from '../.helpers/v-button.vue';
+import vAboutUsCard from './v-about-us-card';
 
 export default {
     name: 'v-about-us',
     components: {
+        vTitle,
+        vButton,
         vAboutUsCard,
-        vButton
     },
     data() {
         return {
@@ -44,8 +50,8 @@ export default {
                 title: 'FOUNDER',
                 subtitle: 'Anastasia Papaharidemou',
                 image: {
-                    src: 'about-us_founder-photo.png',
-                    alt: 'founderPhoto'
+                    src: 'about-us_founder-photo.jpg',
+                    alt: 'founderPhoto',
                 },
                 button: {
                     title: 'Contact',

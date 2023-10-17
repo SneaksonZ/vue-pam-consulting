@@ -6,7 +6,7 @@ $headerHeight: 120;
     display: flex;
     justify-content: center;
     width: 100%;
-    height: em(120);
+    height: em($headerHeight);
     background: linear-gradient(90.49deg, #53269D 0%, #6D31D0 100.2%);
 
     &__body {
@@ -25,9 +25,6 @@ $headerHeight: 120;
 	&__logo { 
         margin: em(10);
         width: em(100);
-    }
-	&__navigation {
-
     }
 	&__button { 
         $context: 20;
@@ -113,9 +110,6 @@ $headerHeight: 120;
     top: 100%;
     left: 50%;
     transform:translate(-50%, 0);
-    &__item {
-        
-    }
 }
 
 .header-navigation-item-dropdown-menu-item {
@@ -235,7 +229,7 @@ $headerHeight: 120;
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: px($widthMini)) {
     .header {
         &__button {
             display: none;

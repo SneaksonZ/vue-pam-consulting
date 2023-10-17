@@ -1,26 +1,36 @@
 <template>
     <section class="contact-us">
-        <h2 class="contact-us__title title"> {{ block.title }} </h2>
-        <div class="contact-us__contacts contact-us-contacts">
-            <div class="contact-us-contacts__column" v-for="icon in block.icons" :key="icon.key">
-                <img :src="require('../../assets/images/home/' + icon.src)"  :alt="icon.alt" class="contact-us-contacts__icon">
-                <span class="contact-us-contacts__subtitle"> {{ icon.subtitle }} </span>
+        <div class="container">
+            <div class="contact-us__wrapper">
+                <v-title
+                    class="contact-us__title"
+                    :text="block.title"
+                    :needsUnderline="true"
+                />
+                <div class="contact-us-contacts contact-us__contacts">
+                    <div class="contact-us-contacts__column" v-for="icon in block.icons" :key="icon.key">
+                        <img :src="require('../../assets/images/home/' + icon.src)"  :alt="icon.alt" class="contact-us-contacts__icon">
+                        <span class="contact-us-contacts__subtitle"> {{ icon.subtitle }} </span>
+                    </div>
+                </div>
+                <v-form
+                    :block="block.form"
+                />
             </div>
         </div>
-        <v-form
-            :block="block.form"
-        />
     </section>
 </template>
 
 
 
 <script>
+import vTitle from '../.helpers/v-title.vue';
 import vForm from '../.helpers/v-form.vue';
 
 export default {
     name: 'v-contact-us',
     components: {
+        vTitle,
         vForm
     },
     data() {

@@ -1,9 +1,9 @@
 <template>
     <li class="questions-list__item questions-list-item">
-        <div class="questions-list-item-header">
+        <div class="questions-list-item-header questions-list-item__header">
             <picture class="questions-list-item-header__picture">
                 <img :src="require('../../assets/images/home/' + card.image)" alt='image'
-                    class="question-list-item-header__img">
+                    class="questions-list-item-header__img">
                 <span class="questions-list-item-header__tag questions-list-item-header-tag"> {{ card.tag }} </span>
             </picture>
         </div>

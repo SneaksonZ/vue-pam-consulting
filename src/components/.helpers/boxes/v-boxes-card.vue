@@ -1,6 +1,6 @@
 <template>
-    <div class="boxes__card boxes-card">
-        <picture class="boxes-card__icon">
+    <div class="boxes-card boxes__card">
+        <picture class="boxes-card-icon boxes-card__icon">
             <img
                 :src="require('../../../assets/images/boxes/' + card.image)"
                 :alt="card.alt"
