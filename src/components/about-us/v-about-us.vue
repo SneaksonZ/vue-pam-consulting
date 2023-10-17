@@ -5,7 +5,7 @@
                 <div class="about-us__row">
                     <div class="about-us-info about-us__info">
                         <v-title
-                            class="about-us-info-title about-us-info__title"
+                            class="about-us-info__title"
                             :text="block.title"
                             :needsUnderline="true"  
                         />
@@ -16,6 +16,7 @@
                         />
                     </div>
                     <v-about-us-card
+                        class="about-us__founder-card"
                         :block="card"
                     />
                 </div>

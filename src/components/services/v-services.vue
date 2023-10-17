@@ -11,6 +11,7 @@
                     :key="card.id"
                 >
                     <v-services-card
+                        class="services__card"
                         :card="card"
                     />
                 </li>

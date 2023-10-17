@@ -1,5 +1,5 @@
 <template>
-    <div class="intro-cities-card intro-cities__card">
+    <div class="intro-cities-card">
         <picture class="intro-cities-card-picture">
             <img v-bind:src="require('../../assets/images/home/' + card.image)" v-bind:alt="card.alt" class="intro-cities-card__img">
         </picture>

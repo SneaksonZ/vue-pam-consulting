@@ -14,7 +14,10 @@
                     </picture>
                 </div>
                 <div class="map__column">
-                    <v-map-card :card="cards[0]" />
+                    <v-map-card 
+                        class="map__card"
+                        :card="cards[0]"
+                    />
                 </div>
             </div>
         </div>

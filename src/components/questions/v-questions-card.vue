@@ -1,5 +1,5 @@
 <template>
-    <li class="questions-list__item questions-list-item">
+    <li class="questions-list-item">
         <div class="questions-list-item-header questions-list-item__header">
             <picture class="questions-list-item-header__picture">
                 <img :src="require('../../assets/images/home/' + card.image)" alt='image'

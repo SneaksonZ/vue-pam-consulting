@@ -1,6 +1,7 @@
 <template>
-    <div class="boxes__row-pair">
+    <div class="boxes-row-pair">
         <v-boxes-card
+            class="boxes__card"
             v-for="card in pair"
             :key="card.id"
             :card="card"

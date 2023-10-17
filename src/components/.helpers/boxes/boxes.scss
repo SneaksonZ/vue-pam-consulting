@@ -38,11 +38,6 @@
         margin: 0 em(-10);
     }
 
-    &__row-pair {
-        display: flex;
-        justify-content: center;
-    }
-
     &__card {
         display: flex;
         flex-direction: column;
@@ -50,6 +45,11 @@
         max-width: em(280);
         margin: 0 em(10) em(60) em(10);
     }
+}
+
+.boxes-row-pair {
+    display: flex;
+    justify-content: center;
 }
 
 .boxes-card {

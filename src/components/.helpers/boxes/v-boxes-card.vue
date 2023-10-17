@@ -1,5 +1,5 @@
 <template>
-    <div class="boxes-card boxes__card">
+    <div class="boxes-card">
         <picture class="boxes-card-icon boxes-card__icon">
             <img
                 :src="require('../../../assets/images/boxes/' + card.image)"

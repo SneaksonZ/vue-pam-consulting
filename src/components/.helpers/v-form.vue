@@ -4,7 +4,7 @@
             <h3 class="form__title"> {{ block.title }} </h3>
             <div class="form__inputs">
                 <v-form-input
-                    class="form__input form-input"
+                    class="form__input"
                     v-for="input in block.inputs"
                     :block="input"
                     :key="input.key"

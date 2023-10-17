@@ -1,5 +1,5 @@
 <template>
-    <div class="services-card services__card">
+    <div class="services-card">
         <picture class="services-card-picture services-card__picture">
             <img :src="require('../../assets/images/home/' + card.image)" :alt="card.alt" class="services-card-picture__img">
         </picture>

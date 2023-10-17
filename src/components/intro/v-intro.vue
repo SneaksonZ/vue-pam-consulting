@@ -19,6 +19,7 @@
                                 data-swiper-parallax="-150"
                             >
                                 <v-intro-tag
+                                    class="intro-tags__item"
                                     v-for="tag in block.tags"
                                     :key="tag.id"
                                     :tag="tag"
@@ -54,6 +55,7 @@
                             <h4 class="intro-cities__title title" v-if="block.cards.length != 0">Most popular cities</h4>
                             <div class="intro-cities__row">
                                 <v-intro-card
+                                    class="intro-cities__card"
                                     v-for="card in block.cards"
                                     :key="card.id"
                                     :card="card"

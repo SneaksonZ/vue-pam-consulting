@@ -1,5 +1,6 @@
 <template>
     <input
+        class="form-input"
         :type="block.type"
         :name="block.name"
         :placeholder="block.placeholder"

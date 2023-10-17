@@ -12,6 +12,7 @@
                         :class="{ 'header-navigation-item-dropdown': link.sublinks.length }"
                         >
                         <v-header-link
+                            class="header-navigation-item__link"
                             :link = "link"
                         />
                         <v-header-dropdown 

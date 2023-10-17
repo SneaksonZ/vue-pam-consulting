@@ -12,6 +12,7 @@
                             :key="card.id"
                         >
                             <v-questions-card 
+                                class="questions-list__item"
                                 :card="card"
                             />
                         </swiper-slide>

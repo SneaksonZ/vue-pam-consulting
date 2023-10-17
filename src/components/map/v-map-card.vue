@@ -1,5 +1,5 @@
 <template>
-    <div class="map__card map-card">
+    <div class="map-card">
         <div class="map-card-header">
             <div class="map-card-header__images-row">
                 <picture

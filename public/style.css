@@ -373,14 +373,6 @@ body {
   max-width: 100%;
   margin: 0 -0.714em;
 }
-.boxes__row-pair {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
 .boxes__card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -394,6 +386,15 @@ body {
           align-items: center;
   max-width: 20em;
   margin: 0 0.714em 4.286em 0.714em;
+}
+
+.boxes-row-pair {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .boxes-card__icon {
@@ -1127,8 +1128,6 @@ body {
   max-width: 34.286em;
 }
 .moving-to-paradise__title {
-  font-family: "Avenir Next", sans-serif;
-  font-weight: 600;
   line-height: 1em;
   font-size: 2.857em;
   color: rgb(67, 67, 100);
@@ -1335,6 +1334,7 @@ body {
   line-height: 1.111em;
   letter-spacing: 0;
   color: rgb(255, 255, 255);
+  padding-bottom: 0.194em;
   margin-bottom: 0.556em;
 }
 .about-us-info__title:after {
@@ -1350,10 +1350,6 @@ body {
 }
 .about-us-info__button {
   margin-bottom: 3.143em;
-}
-
-.about-us-info-title {
-  padding-bottom: 0.194em;
 }
 
 .about-us-founder-card {

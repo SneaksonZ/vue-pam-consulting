@@ -1,5 +1,5 @@
 <template>
-    <a :href="link.url" class="header-navigation-item__link header-navigation-item-link"> {{ link.text }} </a>
+    <a :href="link.url" class="header-navigation-item-link"> {{ link.text }} </a>
 </template>
 
 <script>

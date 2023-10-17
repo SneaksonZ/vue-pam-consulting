@@ -1,5 +1,5 @@
 <template>
-    <div class="about-us__founder-card about-us-founder-card">
+    <div class="about-us-founder-card">
         <img
             class="about-us-founder-card__image"
             :src="require('../../assets/images/home/' + block.image.src)"

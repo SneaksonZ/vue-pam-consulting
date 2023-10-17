@@ -28,6 +28,7 @@
         line-height: em(40, $context);
         letter-spacing: 0;
         color: $pam_color6;
+        padding-bottom: em(7, 36);
         margin-bottom: em(20, $context);
 
         &:after {
@@ -48,10 +49,6 @@
     &__button {
         margin-bottom: em(44);
     }
-}
-
-.about-us-info-title {
-    padding-bottom: em(7, 36);
 }
 
 .about-us-founder-card {

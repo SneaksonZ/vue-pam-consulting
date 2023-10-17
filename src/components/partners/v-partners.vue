@@ -8,6 +8,7 @@
                 />
                 <div class="partners__icons partners-icons">
                     <v-partners-icon
+                        class="partners-icons__picture"
                         v-for="partner in block.partners"
                         :key="partner.id"
                         :icon="partner"
