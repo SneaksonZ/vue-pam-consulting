@@ -1,7 +1,7 @@
 <template>
     <button
         class="button"
-        v-bind:class="className"
+        :class="className"
         @click="click"
     >
         {{ title }}
